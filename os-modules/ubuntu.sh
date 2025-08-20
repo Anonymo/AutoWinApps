@@ -552,6 +552,4 @@ cleanup_ubuntu() {
     print_verbose "Ubuntu cleanup completed"
 }
 
-# Initialize Ubuntu module
-print_verbose "Ubuntu module loaded"
-check_os_requirements
+# Ubuntu module loaded - functions are available for use

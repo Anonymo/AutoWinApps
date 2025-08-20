@@ -590,6 +590,4 @@ cleanup_debian() {
     print_verbose "Debian cleanup completed"
 }
 
-# Initialize Debian module
-print_verbose "Debian module loaded"
-check_os_requirements
+# Debian module loaded - functions are available for use

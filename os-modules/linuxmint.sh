@@ -643,6 +643,4 @@ cleanup_linuxmint() {
     print_verbose "Linux Mint cleanup completed"
 }
 
-# Initialize Linux Mint module
-print_verbose "Linux Mint module loaded"
-check_os_requirements
+# Linux Mint module loaded - functions are available for use

@@ -29,27 +29,35 @@ SKIP_UPDATES=false
 
 # Function to print colored output
 print_status() {
-    echo -e "${BLUE}[INFO]${NC} $1" | tee -a "$LOG_FILE"
+    echo -e "${BLUE}[INFO]${NC} $1"
+    echo "[INFO] $1" >> "$LOG_FILE" 2>/dev/null || true
 }
 
 print_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1" | tee -a "$LOG_FILE"
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+    echo "[SUCCESS] $1" >> "$LOG_FILE" 2>/dev/null || true
 }
 
 print_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1" | tee -a "$LOG_FILE"
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+    echo "[WARNING] $1" >> "$LOG_FILE" 2>/dev/null || true
 }
 
 print_error() {
-    echo -e "${RED}[ERROR]${NC} $1" | tee -a "$LOG_FILE"
+    echo -e "${RED}[ERROR]${NC} $1"
+    echo "[ERROR] $1" >> "$LOG_FILE" 2>/dev/null || true
 }
 
 print_header() {
-    echo -e "\n${BOLD}${BLUE}$1${NC}\n" | tee -a "$LOG_FILE"
+    echo -e "\n${BOLD}${BLUE}$1${NC}\n"
+    echo "\n=== $1 ===\n" >> "$LOG_FILE" 2>/dev/null || true
 }
 
 print_verbose() {
-    [[ "$VERBOSE" == true ]] && echo -e "${BLUE}[VERBOSE]${NC} $1" | tee -a "$LOG_FILE"
+    if [[ "$VERBOSE" == true ]]; then
+        echo -e "${BLUE}[VERBOSE]${NC} $1"
+        echo "[VERBOSE] $1" >> "$LOG_FILE" 2>/dev/null || true
+    fi
 }
 
 # Function to show progress bar
@@ -782,10 +790,10 @@ show_completion() {
 
 # Function to run system tests
 run_system_tests() {
-    print_header "🧪 AutoWinApps System Detection Tests"
-    
     # Setup logging for tests
     setup_logging
+    
+    print_header "🧪 AutoWinApps System Detection Tests"
     
     print_status "Running comprehensive system tests..."
     echo

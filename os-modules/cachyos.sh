@@ -433,6 +433,4 @@ cleanup_cachyos() {
     print_verbose "CachyOS cleanup completed"
 }
 
-# Initialize CachyOS module
-print_verbose "CachyOS module loaded"
-check_os_requirements
+# CachyOS module loaded - functions are available for use
