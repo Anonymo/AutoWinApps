@@ -11,9 +11,6 @@ AutoWinApps is a comprehensive automation system that makes installing and confi
 git clone https://github.com/Anonymo/AutoWinApps.git
 cd AutoWinApps
 
-# Navigate to the scripts directory
-cd AutoWinApps
-
 # Run the universal installer (works in any shell)
 bash install-winapps.sh
 
@@ -249,9 +246,6 @@ Each distribution has a dedicated module that provides:
 ```bash
 # Clone the repository
 git clone https://github.com/Anonymo/AutoWinApps.git
-cd AutoWinApps
-
-# Navigate to the scripts directory
 cd AutoWinApps
 
 # Make scripts executable (if needed)
@@ -549,9 +543,6 @@ Contributions are welcome! Here's how you can help:
 ```bash
 # Fork the repository
 git clone https://github.com/YOUR_USERNAME/AutoWinApps.git
-cd AutoWinApps
-
-# Navigate to the scripts directory
 cd AutoWinApps
 
 # Test your changes (works in any shell)
